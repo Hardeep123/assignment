@@ -1,0 +1,50 @@
+$(document).ready(function() {
+			var serviceFile="data.json";
+			var info = [];
+			$.getJSON(serviceFile, function(result) {
+				
+				info = result.ProductsList;
+				
+				
+				var productLength = info.length;
+				var data = "";
+				for (var i = 0; i < 9; i++) {
+					
+					//IMAGES FROM JSON FILE
+					var product_machine = "<img src=" + info[i].imageURLs.lg
+							+ ">";
+					/*DESCRIPTION OF THE PRODUCT FROM JSON FILE*/
+					var machine_Description = "<div style='width:450px; text-align: justify; margin-top:5px;' >" 
+							+  info[i].ProductInfo.p_product_description+ "</div>"; 
+					
+					//PRICE FROM JSON FILE
+					var machine_Price = "<div style='margin-top:1px'  id='price' price1="+ info[i].ProductInfo.p_product_price +"> "
+							+ info[i].ProductInfo.p_product_price
+							+ ".00</div>";
+					
+					var star='<div id="stars" style="display:none;"><ul ><li>'+ info[i].ProductInfo.p_product_specs.Value[30].Key +'</li><li>'+info[i].ProductInfo.p_product_specs.Value[15].Key+'</li><li>'+info[i].ProductInfo.p_product_specs.Value[40].Key+'</li></ul> </div>';
+					
+					data += '<div class="col-sm-3 boxes">' + product_machine + machine_Description
+						+star	+ machine_Price +  '<button id="btn" type="button" class="btn btn-default" price1='+ info[i].ProductInfo.p_product_price + '  style="margin-top:12px; border:2px solid #708090; background-color: darkgrey; color: black;">View More</button></div>'
+				}
+				$("#product_images").html(data);
+
+			});
+			//ON MOUSE ENTER FUNCTION
+			$("#product_images").on("mouseenter",".boxes", function(){
+				var machine_info=$(this).html();
+				machine_info=machine_info.toString();
+				
+				$("#hero").html(machine_info);
+				$("#stars").show();
+				$("#btn").html("Add To Cart");
+			//ADD TO CART BUTTON ALERT
+				$("#btn").click(function(){
+					
+					alert($(this).attr('price1'));
+				});
+				
+				
+			});
+			
+			});
