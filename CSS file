@@ -1,0 +1,133 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+} 
+/* remember to define focus styles! */
+
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+
+
+
+/* blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+} */
+#price:before{
+	content:' $ ';
+}
+#price
+{
+	
+	font-size: 25px;
+}
+.boxes {
+  overflow: hidden;
+}
+.boxes img{
+	width:100%;
+
+	
+	
+}
+.row {
+   /* margin-right: auto; 
+   margin-left: auto;
+     */
+     border:2px solid grey;
+padding-left:20px;
+}
+
+.boxes
+{
+	/* border:2px solid darkgrey;
+	padding: 10px;
+	margin:15px;
+	text-align:center;
+	background-color: lightgrey; */
+	width: 30%;
+ height:450px;
+ 
+  border: 2px solid grey;
+  padding: 10px;
+  margin: 15px;
+  text-align: center;
+  background-color: lightgrey;
+}
+
+#hero
+{
+	border:5px solid grey;
+	text-align:center;
+	//height:200px;
+	display:-webkit-box;
+	overflow: hidden;
+	//position: absolute;
+	background-color: lightgrey;
+}
+#hero#spec{
+	display:block;
+}
+#stars
+{
+	//text-align:center;
+	margin-top:110px;
+	//margin-right:50px;
+	//padding-right:30px;
+	
+	
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+
+
+@media screen and (max-width: 720px) {
+    .boxes {
+       width: 90%;
+       height:auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
